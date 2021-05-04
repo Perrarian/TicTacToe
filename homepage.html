@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        background-color: aqua;
+        opacity: .9;
+    }
+    h1{
+        font-size: 5rem;
+        flex-direction: column;
+        display: flex;
+        position: absolute;
+        justify-items: center;
+        left: 28%;
+        top: 30%
+        }
+
+    h2{
+        font-size: 3rem;
+        display: flex;
+        position: absolute;
+        justify-items: center;
+        left: 40%;
+        top: 45%
+    }
+    button {
+        display: flex;
+        font-size: 2rem;
+        padding:10px;
+        background-color: aquamarine;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+</style>
+<body><div>
+
+    <script>
+        function play() {
+        var audio = document.getElementById("audio")
+        audio.play
+    }
+    </script>
+    <div><h1>Welcome to Tic Tac Toe</h1></div>
+
+    <div>
+        <div>
+    <h2>Press <a href="index.html"><button value="PLAY" onclick="play()"> START </button></a> to play!</h2>
+</div>
+    </div>
+    </div>
+    <input type="button" value="PLAY"  onclick="play()">
+    <audio id="audio" src="Child's Nightmare.ogg"></audio>
+</body>
+</html>

@@ -1,0 +1,130 @@
+body{
+    margin: 0;
+    background-color: darkkhaki;
+}
+
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size)*.9)
+}
+
+.board{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: darkkhaki;
+    border: solid 1px black ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+        border-top:none; 
+}
+
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+
+.cell:nth-child(3n + 3){
+    border-right:none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7){
+    border-bottom: none;
+}
+
+.cell.x::before,
+.cell.x::after {
+    content: "";
+    position: absolute;
+    width: calc(var(--mark-size)* .15);
+    height: var(--mark-size);
+    background-color: black;
+    
+}
+
+.cell.x::before{
+    transform: rotate(45deg);
+}
+.cell.x:after{
+    transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after{
+    content: "";
+    position: absolute;
+    width: (var(--mark-size));
+    height: var(--mark-size);
+    border-radius: 50%;
+    background-color: black;
+}
+
+.cell.circle::before{
+    content: "";
+    position: absolute;
+    width: var(--mark-size);
+    height: var(--mark-size);
+    border-radius: 50%;
+    background-color: black;
+}
+.cell.circle::after{
+    content: "";
+    position: absolute;
+    width: calc(var(--mark-size)*.7);
+    height: calc(var(--mark-size)*.7);
+    border-radius: 50%;
+    background-color: darkkhaki;
+}
+
+.winning-message {
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(135, 139, 70, 0.9);
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.winning-message button {
+    font-size: 3rem;
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+.winning-message button:hover {
+    background-color: cyan;
+
+}
+
+.winning-message.show {
+    display:flex;
+}
